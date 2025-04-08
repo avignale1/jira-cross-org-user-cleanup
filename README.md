@@ -1,5 +1,11 @@
-# jira-user-deletion-script
- Jira Removal Script
+
+Preface
+
+While working at my company, somebody accidentally imported 1200 users in a cloud migration from one Jira Org to another.
+There was no way to  simply undo this. All I had to go off of was a list of csv emails.
+I knew that the Atalssian username was compromised of everything before @ in each email address
+This is a python script I made that takes in a CSV Emails and checks if that user is duplicious. If so, delete that User
+
 
 This Python script allows you to see Jira user information across 2 orgs when only given a list of emails. It checks Users from Org 1 and then sees if they are in Org 2. This can help inform you about duplicious users and allow you to remove them quickly. This uses the Jira Admin API because we need to query specific user information and perform admin level actions across 2 Jira "Orgs". This is a pretty niche script but it saved me and my coworkers a lot of headache. 
  It uses the Atlassian Admin API to:
@@ -50,3 +56,5 @@ User details:
     "date_created": "2022-06-15T08:22:12.000Z"
 }
 
+Note:
+Need a CSV of emails with Users information
