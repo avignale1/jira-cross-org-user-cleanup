@@ -22,11 +22,8 @@ import json
 
 
 # if user_details:
-#     confirm = input(f"Do you want to delete this user? (yes/no): ").strip().lower()
-#     if confirm == "yes":
 #         delete_user(account_id)
-#     else:
-#         print("Skipped deletion.")
+
 
 
 
@@ -76,6 +73,16 @@ def get_user_details(account_id):
     else:
         print(f"Failed to get details for account ID {account_id}: {response.status_code} {response.text}")
         return None
+
+def delete_user(account_id):
+    """Delete a user by account ID."""
+    url = f'https://api.atlassian.com/admin/v1/orgs/{ORG_ID_2}/directory/users/{account_id}'
+    response = requests.delete(url, headers=HEADERS)
+    if response.status_code == 204:
+        print(f" Successfully deleted user with account ID {account_id}")
+    else:
+        print(f" Failed to delete user {account_id}: {response.status_code} {response.text}")
+
 
 def main():
     emails = read_emails_from_csv(CSV_FILE_PATH)
