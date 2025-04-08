@@ -2,7 +2,7 @@ import csv
 import requests
 import time
 import json
-#While at Global Payments somehow somebody accidentally imported 1000 users in a cloud migration from one Jira Org to another. There was no way to do to simply undo this. All I had to go off of was a list of emails.
+#While working at my company, somebody accidentally imported 1000 users in a cloud migration from one Jira Org to another. There was no way to do to simply undo this. All I had to go off of was a list of emails.
 # I knew that the Atalssian username was compromised of everything before @ in each email address
 #This is a python script I made to mass delete Jira users when only given a users email
 
@@ -15,7 +15,7 @@ import json
 # Prints user details to the console.
 # Sleeps between requests to avoid API rate limiting.
 
-#This script is very consequential and irreversible so I have commented out the deleted user portion
+#This script is  irreversible so I have commented out the deleted user portion
 #To make it delete users, paste the below code into main function where user details are getting printed (if user_details: print(user_details)
 
 
